@@ -1,0 +1,9 @@
+
+HEADER_SEARCH_PATHS = $(inherited) "/Users/benjamin/.conan/data/grumble/1.0.0/_/_/package/a6d9ecd51d9301cf890b4d4bfe8a9ed7e68b81f7/include"
+LIBRARY_SEARCH_PATHS = $(inherited) "/Users/benjamin/.conan/data/grumble/1.0.0/_/_/package/a6d9ecd51d9301cf890b4d4bfe8a9ed7e68b81f7/lib"
+OTHER_LDFLAGS = $(inherited)  -lgrumble  
+
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) 
+OTHER_CFLAGS = $(inherited) 
+OTHER_CPLUSPLUSFLAGS = $(inherited) 
+FRAMEWORK_SEARCH_PATHS = $(inherited) "/Users/benjamin/.conan/data/grumble/1.0.0/_/_/package/a6d9ecd51d9301cf890b4d4bfe8a9ed7e68b81f7" 
