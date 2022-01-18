@@ -20,7 +20,7 @@ void BlueprintManager::parseBlueprint(std::string filename) {
     NSData *data = [NSData dataWithContentsOfFile:path];
     NSDictionary *root = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
     if (error != NULL) {
-        Logger::logError("Error with blueprint parsing.");
+        grumble::Logger::logError("Error with blueprint parsing.");
         NSLog(@"ERROR: %@", error.debugDescription);
         return;
     }

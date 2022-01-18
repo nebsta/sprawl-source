@@ -10,18 +10,21 @@
 #define BoardLayerView_hpp
 
 #import "CellView.hpp"
-#import "SpriteManager.hpp"
 
-class BoardLayerView : public View {
+#import "grumble/render/SpriteManager.hpp"
+#import "grumble/base/Object.hpp"
+#import "grumble/ui/View.hpp"
+
+class BoardLayerView : public grumble::View {
 public:
-    BoardLayerView(const glm::vec2& size, const SpriteManager& spriteManager);
+    BoardLayerView(const glm::vec2& size, const grumble::SpriteManager& spriteManager);
     ~BoardLayerView();
     
     void addCell(const CellDataModel& cell);
     void removeCell(const CellDataModel& cell);
     
 private:
-    const SpriteManager& _spriteManager;
+    const grumble::SpriteManager& _spriteManager;
 };
 
 #endif /* BoardLayerView_hpp */

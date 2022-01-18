@@ -11,13 +11,14 @@
 
 #include <stdio.h>
 
-#import "View.hpp"
-#import "Object.hpp"
+#import <grumble/ui/View.hpp>
+#import <grumble/base/Object.hpp>
+#import <grumble/ui/ScreenHandler.hpp>
+#import <grumble/render/SpriteManager.hpp>
+
 #import "BlueprintManager.hpp"
-#import "ScreenHandler.h"
 #import "BoardDataModel.hpp"
 #import "BoardView.hpp"
-#import "SpriteManager.hpp"
 
 class Game : public Object {
     

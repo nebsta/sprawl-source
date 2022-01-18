@@ -10,12 +10,12 @@
 #define BoardDataModel_hpp
 
 #include <stdio.h>
-#include <glm.hpp>
 #include <map>
+#include <glm/glm.hpp>
+#include <grumble/base/Object.hpp>
 
 #include "CellDataModel.h"
 #include "BlueprintDataModel.h"
-#include "Object.hpp"
 
 #define BOARD_DEFAULT_GRID_SIZE glm::vec2(6,11)
 #define BOARD_DEFAULT_CELL_SIZE glm::vec2(50,50)
@@ -27,7 +27,7 @@ public:
     virtual void onBlueprintAdded(const GridLocation& origin, const BlueprintDataModel& blueprint) = 0;
 };
 
-class BoardDataModel : public Object {
+class BoardDataModel : public grumble::Object {
     
 public:
     BoardDataModel();

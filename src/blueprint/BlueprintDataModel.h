@@ -10,8 +10,8 @@
 #define BlueprintDataModel_h
 
 #include <vector>
-#include <glm.hpp>
 
+#include "glm/glm.hpp"
 #include "CellDataModel.h"
 
 typedef struct BlueprintDataModel {

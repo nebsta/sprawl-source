@@ -8,7 +8,7 @@
 
 #include "BoardLayerView.hpp"
 
-BoardLayerView::BoardLayerView(const glm::vec2& size, const SpriteManager& spriteManager) : View(VECTOR_EMPTY,size,COLOR_CLEAR),
+BoardLayerView::BoardLayerView(const glm::vec2& size, const grumble::SpriteManager& spriteManager) : View(VECTOR_EMPTY,size,COLOR_CLEAR),
 _spriteManager(spriteManager) {
     
 }

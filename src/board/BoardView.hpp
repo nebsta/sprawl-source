@@ -11,12 +11,12 @@
 
 #include <vector>
 
-#include "SpriteManager.hpp"
-#include "MathConstants.h"
+#include <grumble/render/SpriteManager.hpp>
+#include <grumble/util/MathConstants.hpp>
+#include <grumble/message/MessageManager.hpp>
+
 #include "BoardDataModel.hpp"
 #include "BoardLayerView.hpp"
-
-#include "MessageManager.hpp"
 
 #define BOARDVIEW_DEFAULT_SIZE glm::vec2(300,550)
 
@@ -25,10 +25,10 @@ typedef enum BoardLayer {
     BoardLayer_Blocks
 } BoardLayer;
 
-class BoardView : public View, public BoardDataModelListener {
+class BoardView : public grumble::View, public BoardDataModelListener {
     
 public:
-    BoardView(BoardDataModel& model, const SpriteManager& spriteLoader);
+    BoardView(BoardDataModel& model, const grumble::SpriteManager& spriteLoader);
     ~BoardView();
     
     void addCell(const CellDataModel& cell, const BoardLayer& layer);
@@ -42,7 +42,7 @@ public:
 private:
     std::map<int,BoardLayerView*> _layers;
     
-    void buildLayerView(const BoardLayer &layer, const SpriteManager& spriteLoader);
+    void buildLayerView(const BoardLayer &layer, const grumble::SpriteManager& spriteLoader);
 };
 
 #endif /* BoardView_hpp */

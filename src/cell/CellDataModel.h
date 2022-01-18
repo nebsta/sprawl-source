@@ -11,8 +11,8 @@
 
 #include <string>
 
-#include "SpriteManager.hpp"
-#include "MathConstants.h"
+#include <grumble/render/SpriteManager.hpp>
+#include <grumble/util/MathConstants.hpp>
 
 #define GLOCATION_EMPTY (GridLocation){-1,-1}
 #define CELL_EMPTY {Cell_None,GLOCATION_EMPTY}
@@ -52,9 +52,9 @@ inline std::string spriteNameForType(CellType type) {
     return name;
 }
 
-inline Sprite spriteForType(const SpriteManager& manager, CellType type) {
+inline grumble::Sprite spriteForType(const grumble::SpriteManager& manager, CellType type) {
     if (type == Cell_None) {
-        return SpriteEmpty;
+        return grumble::SpriteEmpty;
     }
     
     std::string name = spriteNameForType(type);

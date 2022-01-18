@@ -8,16 +8,16 @@
 
 #include "BoardView.hpp"
 
-BoardView::BoardView(BoardDataModel& model, const SpriteManager& spriteLoader) : View(VECTOR_EMPTY,BOARDVIEW_DEFAULT_SIZE)
+BoardView::BoardView(BoardDataModel& model, const grumble::SpriteManager& spriteLoader) : View(VECTOR_EMPTY,BOARDVIEW_DEFAULT_SIZE)
 {
     model.setListener(this);
     
-    glm::vec2 size = transform().size();
-    glm::vec2 boardPosition = glm::vec2((screenWidth()-size.x)*0.5f,screenHeight()-size.y);
-    transform().setLocalPosition(boardPosition);
-    
-    buildLayerView(BoardLayer_Blocks, spriteLoader);
-    buildLayerView(BoardLayer_Blueprint, spriteLoader);
+//    glm::vec2 size = transform().size();
+//    glm::vec2 boardPosition = glm::vec2((screenWidth()-size.x)*0.5f,screenHeight()-size.y);
+//    transform().setLocalPosition(boardPosition);
+//
+//    buildLayerView(BoardLayer_Blocks, spriteLoader);
+//    buildLayerView(BoardLayer_Blueprint, spriteLoader);
     
 //    View *animationTest = new View();
 //    animationTest->transform()->setLocalPosition(glm::vec2(50,50));
@@ -81,7 +81,7 @@ BoardView::~BoardView() {
     
 }
 
-void BoardView::buildLayerView(const BoardLayer &layer, const SpriteManager& spriteManager) {
+void BoardView::buildLayerView(const BoardLayer &layer, const grumble::SpriteManager& spriteManager) {
     BoardLayerView *view = new BoardLayerView(transform().size(), spriteManager);
     addChild(view);
     _layers[layer] = view;

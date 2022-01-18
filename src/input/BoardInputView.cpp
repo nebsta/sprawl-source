@@ -10,33 +10,33 @@
 
 BoardInputView::BoardInputView() : View() {
     
-    _transform.setSize(screenSize());
+//    _transform.setSize(screenSize());
+//
+//    View *leftView = new View();
+//    leftView->renderer()->setTint(COLOR_CLEAR);
+//    leftView->transform().setSize(glm::vec2(screenWidth()*0.5f,screenHeight()));
+//    addChild(leftView);
+//
+//    View *rightView = new View();
+//    rightView->renderer()->setTint(COLOR_CLEAR);
+//    rightView->transform().setLocalPosition(glm::vec2(screenWidth()*0.5,0.0f));
+//    rightView->transform().setSize(glm::vec2(screenWidth()*0.5f,screenHeight()));
+//    addChild(rightView);
     
-    View *leftView = new View();
-    leftView->renderer()->setTint(COLOR_CLEAR);
-    leftView->transform().setSize(glm::vec2(screenWidth()*0.5f,screenHeight()));
-    addChild(leftView);
-    
-    View *rightView = new View();
-    rightView->renderer()->setTint(COLOR_CLEAR);
-    rightView->transform().setLocalPosition(glm::vec2(screenWidth()*0.5,0.0f));
-    rightView->transform().setSize(glm::vec2(screenWidth()*0.5f,screenHeight()));
-    addChild(rightView);
-    
-    leftView->setOnTouchBegin([=](Touch touch) {
-        Logger::logMessage("Left Input");
-        if (_listener != nullptr) {
-            _listener->onLeftInput();
-        }
-    });
-    leftView->setId(390);
-    
-    rightView->setOnTouchBegin([=](Touch touch) {
-        Logger::logMessage("Right Input");
-        if (_listener != nullptr) {
-            _listener->onRightInput();
-        }
-    });
+//    leftView->setOnTouchBegin([=](grumble::Touch touch) {
+//        grumble::Logger::logMessage("Left Input");
+//        if (_listener != nullptr) {
+//            _listener->onLeftInput();
+//        }
+//    });
+//    leftView->setId(390);
+//    
+//    rightView->setOnTouchBegin([=](grumble::Touch touch) {
+//        grumble::Logger::logMessage("Right Input");
+//        if (_listener != nullptr) {
+//            _listener->onRightInput();
+//        }
+//    });
 }
 
 BoardInputView::~BoardInputView() {

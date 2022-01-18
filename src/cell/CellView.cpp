@@ -8,9 +8,9 @@
 
 #include "CellView.hpp"
 
-CellView::CellView(const CellDataModel& model, const SpriteManager& spriteManager) {
+CellView::CellView(const CellDataModel& model, const grumble::SpriteManager& spriteManager) {
     
-    ImageView *imageView = new ImageView(spriteForType(spriteManager, model.type));
+    grumble::ImageView *imageView = new grumble::ImageView(spriteForType(spriteManager, model.type));
     imageView->transform().setSize(glm::vec2(50,50));
     addChild(imageView);
 }

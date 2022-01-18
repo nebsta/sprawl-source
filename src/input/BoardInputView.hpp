@@ -9,6 +9,8 @@
 #ifndef BoardInputView_hpp
 #define BoardInputView_hpp
 
+#include "grumble/base/Object.hpp"
+#include "grumble/ui/View.hpp"
 
 class BoardInputListener {
 public:
@@ -17,7 +19,7 @@ public:
     virtual void onDownInput() = 0;
 };
 
-class BoardInputView : public View {
+class BoardInputView : public grumble::View {
 public:
     BoardInputView();
     ~BoardInputView();

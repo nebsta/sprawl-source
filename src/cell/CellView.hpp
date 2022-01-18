@@ -9,14 +9,15 @@
 #ifndef CellView_hpp
 #define CellView_hpp
 
-#include "ImageView.hpp"
-#include "CellDataModel.h"
-#include "SpriteManager.hpp"
+#include <grumble/ui/ImageView.hpp>
+#include <grumble/render/SpriteManager.hpp>
 
-class CellView : public View {
+#include "CellDataModel.h"
+
+class CellView : public grumble::View {
     
 public:
-    CellView(const CellDataModel& model, const SpriteManager& spriteManager);
+    CellView(const CellDataModel& model, const grumble::SpriteManager& spriteManager);
     ~CellView();
 };
 

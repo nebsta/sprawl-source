@@ -94,8 +94,8 @@
 		4357440A27907D7D000B5062 /* input */ = {
 			isa = PBXGroup;
 			children = (
-				4357440B27907D7D000B5062 /* BoardInputView.cpp */,
 				4357440C27907D7D000B5062 /* BoardInputView.hpp */,
+				4357440B27907D7D000B5062 /* BoardInputView.cpp */,
 			);
 			path = input;
 			sourceTree = "<group>";

@@ -9,13 +9,12 @@
 #ifndef BlueprintManager_hpp
 #define BlueprintManager_hpp
 
-#import <Foundation/Foundation.h>
+#include <grumble/base/Object.hpp>
+#include <grumble/util/Logger.hpp>
 
-#include "Object.hpp"
 #include "BlueprintDataModel.h"
-#include "Logger.h"
 
-class BlueprintManager : public Object {
+class BlueprintManager : public grumble::Object {
 public:
     BlueprintManager();
     
