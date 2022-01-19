@@ -1,9 +1,10 @@
 [includedirs]
-/Users/benjamin/.conan/data/grumble/1.0.0/_/_/package/ae9fb1e39cd970d2cc51ecfe9d251ae1f09467d4/include
+/Users/benjamin/.conan/data/grumble/1.0.0/_/_/package/6a285b47ee1ce53094cabe2413a2daebfbd863b8/include
 /Users/benjamin/.conan/data/glm/0.9.9.8/_/_/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/include
+/Users/benjamin/.conan/data/nlohmann_json/3.10.5/_/_/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/include
 
 [libdirs]
-/Users/benjamin/.conan/data/grumble/1.0.0/_/_/package/ae9fb1e39cd970d2cc51ecfe9d251ae1f09467d4/lib
+/Users/benjamin/.conan/data/grumble/1.0.0/_/_/package/6a285b47ee1ce53094cabe2413a2daebfbd863b8/lib
 
 [bindirs]
 
@@ -12,8 +13,9 @@
 
 
 [builddirs]
-/Users/benjamin/.conan/data/grumble/1.0.0/_/_/package/ae9fb1e39cd970d2cc51ecfe9d251ae1f09467d4/
+/Users/benjamin/.conan/data/grumble/1.0.0/_/_/package/6a285b47ee1ce53094cabe2413a2daebfbd863b8/
 /Users/benjamin/.conan/data/glm/0.9.9.8/_/_/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/
+/Users/benjamin/.conan/data/nlohmann_json/3.10.5/_/_/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/
 
 [libs]
 grumble
@@ -50,10 +52,10 @@ grumble
 
 
 [includedirs_grumble]
-/Users/benjamin/.conan/data/grumble/1.0.0/_/_/package/ae9fb1e39cd970d2cc51ecfe9d251ae1f09467d4/include
+/Users/benjamin/.conan/data/grumble/1.0.0/_/_/package/6a285b47ee1ce53094cabe2413a2daebfbd863b8/include
 
 [libdirs_grumble]
-/Users/benjamin/.conan/data/grumble/1.0.0/_/_/package/ae9fb1e39cd970d2cc51ecfe9d251ae1f09467d4/lib
+/Users/benjamin/.conan/data/grumble/1.0.0/_/_/package/6a285b47ee1ce53094cabe2413a2daebfbd863b8/lib
 
 [bindirs_grumble]
 
@@ -62,7 +64,7 @@ grumble
 
 
 [builddirs_grumble]
-/Users/benjamin/.conan/data/grumble/1.0.0/_/_/package/ae9fb1e39cd970d2cc51ecfe9d251ae1f09467d4/
+/Users/benjamin/.conan/data/grumble/1.0.0/_/_/package/6a285b47ee1ce53094cabe2413a2daebfbd863b8/
 
 [libs_grumble]
 grumble
@@ -98,7 +100,7 @@ grumble
 
 
 [rootpath_grumble]
-/Users/benjamin/.conan/data/grumble/1.0.0/_/_/package/ae9fb1e39cd970d2cc51ecfe9d251ae1f09467d4
+/Users/benjamin/.conan/data/grumble/1.0.0/_/_/package/6a285b47ee1ce53094cabe2413a2daebfbd863b8
 
 [name_grumble]
 grumble
@@ -177,7 +179,75 @@ glm
 
 
 
+[includedirs_nlohmann_json]
+/Users/benjamin/.conan/data/nlohmann_json/3.10.5/_/_/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/include
+
+[libdirs_nlohmann_json]
+
+
+[bindirs_nlohmann_json]
+
+
+[resdirs_nlohmann_json]
+
+
+[builddirs_nlohmann_json]
+/Users/benjamin/.conan/data/nlohmann_json/3.10.5/_/_/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/
+
+[libs_nlohmann_json]
+
+
+[system_libs_nlohmann_json]
+
+
+[defines_nlohmann_json]
+
+
+[cppflags_nlohmann_json]
+
+
+[cxxflags_nlohmann_json]
+
+
+[cflags_nlohmann_json]
+
+
+[sharedlinkflags_nlohmann_json]
+
+
+[exelinkflags_nlohmann_json]
+
+
+[sysroot_nlohmann_json]
+
+
+[frameworks_nlohmann_json]
+
+
+[frameworkdirs_nlohmann_json]
+
+
+[rootpath_nlohmann_json]
+/Users/benjamin/.conan/data/nlohmann_json/3.10.5/_/_/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9
+
+[name_nlohmann_json]
+nlohmann_json
+
+[version_nlohmann_json]
+3.10.5
+
+[generatornames_nlohmann_json]
+cmake_find_package=nlohmann_json
+cmake_find_package_multi=nlohmann_json
+pkg_config=nlohmann_json
+
+[generatorfilenames_nlohmann_json]
+
+
+
 [USER_glm]
 [USER_grumble]
+[USER_nlohmann_json]
 [ENV_grumble]
 [ENV_glm]
+[ENV_nlohmann_json]

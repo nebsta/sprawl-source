@@ -9,8 +9,7 @@
 #ifndef BoardInputView_hpp
 #define BoardInputView_hpp
 
-#include "grumble/base/Object.hpp"
-#include "grumble/ui/View.hpp"
+#include <grumble/ui/View.hpp>
 
 class BoardInputListener {
 public:

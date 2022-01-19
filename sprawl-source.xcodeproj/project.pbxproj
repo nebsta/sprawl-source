@@ -44,7 +44,7 @@
 		4357441E27907D7D000B5062 /* CellDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellDataModel.h; sourceTree = "<group>"; };
 		4357441F27907D7D000B5062 /* CellView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CellView.cpp; sourceTree = "<group>"; };
 		4357443027907E8D000B5062 /* conanbuildinfo.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = conanbuildinfo.xcconfig; sourceTree = "<group>"; };
-		4357443127907E98000B5062 /* conanfile.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = conanfile.txt; sourceTree = "<group>"; };
+		436D995E27986307008B213C /* conanfile.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = conanfile.py; sourceTree = "<group>"; };
 		43E5A46B27946BCB0037ACF2 /* libgrumble.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libgrumble.a; path = ../grumble/lib/libgrumble.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -62,7 +62,8 @@
 		435743BA27907C1F000B5062 = {
 			isa = PBXGroup;
 			children = (
-				4357443127907E98000B5062 /* conanfile.txt */,
+				436D995F27986337008B213C /* lib */,
+				436D995E27986307008B213C /* conanfile.py */,
 				4357443027907E8D000B5062 /* conanbuildinfo.xcconfig */,
 				435743C527907C1F000B5062 /* src */,
 				435743C427907C1F000B5062 /* Products */,
@@ -149,6 +150,13 @@
 			path = cell;
 			sourceTree = "<group>";
 		};
+		436D995F27986337008B213C /* lib */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
 		43E5A46A27946BCB0037ACF2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -187,6 +195,7 @@
 				435743BF27907C1F000B5062 /* Headers */,
 				435743C027907C1F000B5062 /* Sources */,
 				435743C127907C1F000B5062 /* Frameworks */,
+				436D996127986364008B213C /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -230,6 +239,23 @@
 /* End PBXProject section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		436D996127986364008B213C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/opt/homebrew/bin/conan export-pkg conanfile.py -f\n";
+		};
 		43E5A46D279473330037ACF2 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

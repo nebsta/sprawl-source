@@ -8,10 +8,12 @@
 
 #include "Game.hpp"
 
-Game::Game(const ScreenHandler& screenHandler) :
+Game::Game(const grumble::ScreenHandler& screenHandler, grumble::FileHandler* fileHandler, grumble::SpriteHandler* spriteHandler) :
 _mainView(VECTOR_EMPTY,glm::vec2(screenHandler.screenWidth(),screenHandler.screenHeight())),
-_spriteManager(),
-_screenHandler(screenHandler) {
+_spriteManager(spriteHandler),
+_screenHandler(screenHandler),
+_fileManager(fileHandler),
+_blueprintManager(_fileManager) {
     
     _mainView.renderer()->setTint(COLOR_RED);
     

@@ -8,48 +8,43 @@
 
 #include "BlueprintManager.hpp"
 
-BlueprintManager::BlueprintManager() {
+BlueprintManager::BlueprintManager(const grumble::FileManager& fileManager) :
+_fileManager(fileManager) {
     parseBlueprint("example_blueprint");
 }
 
 void BlueprintManager::parseBlueprint(std::string filename) {
-    NSString *path = [[NSBundle mainBundle] pathForResource:[NSString stringWithUTF8String:filename.c_str()] ofType:@"json"];
-    
-    // Check for any errors in the parsing
-    NSError *error;
-    NSData *data = [NSData dataWithContentsOfFile:path];
-    NSDictionary *root = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
-    if (error != NULL) {
-        grumble::Logger::logError("Error with blueprint parsing.");
-        NSLog(@"ERROR: %@", error.debugDescription);
-        return;
-    }
+    nlohmann::json root = _fileManager.loadJson(filename);
     
     // Determine the size of the blueprint
     BlueprintDataModel blueprint;
-    blueprint.width = [[root objectForKey:@"width"] intValue];
-    blueprint.height = [[root objectForKey:@"height"] intValue];
+    
+    blueprint.width = root.value("width", 0);
+    blueprint.height = root.value("height", 0);
     
     // Parse the individual cells
-    NSArray *layers = [root objectForKey:@"layers"];
-    for (NSDictionary *dict in layers) {
-        NSString *layerName = [dict objectForKey:@"type"];
-        if ([layerName isEqual:@"tilelayer"]) {
-            NSArray *cellData = [dict objectForKey:@"data"];
-            for (int i = 0; i < cellData.count; i++) {
-                int typeIndex = [[cellData objectAtIndex:i] intValue];
-                int row = i / blueprint.width;
-                int column = i % blueprint.width;
-                
-                if (typeIndex == 0) {
-                    continue;
-                }
-                
-                CellDataModel cell;
-                cell.type = typeForIndex(typeIndex);
-                cell.location = {column, row};
-                blueprint.cells.push_back(cell);
+    nlohmann::json layers = root.value("layers", nlohmann::json());
+    for (nlohmann::json layer : layers) {
+        std::string layerName = layer.value("type", "");
+        if (layerName != "tilelayer") {
+            continue;
+        }
+        
+        nlohmann::json data = root.value("data", nlohmann::json());
+        int index = 0;
+        for (nlohmann::json cellData : data) {
+            int typeIndex = cellData.get<int>();
+            int row = index / blueprint.width;
+            int column = index % blueprint.width;
+            
+            if (typeIndex == 0) {
+                continue;
             }
+            
+            CellDataModel cell;
+            cell.type = typeForIndex(typeIndex);
+            cell.location = {column, row};
+            blueprint.cells.push_back(cell);
         }
     }
     

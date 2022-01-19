@@ -11,6 +11,8 @@
 
 #include <stdio.h>
 
+#import <grumble/io/FileManager.hpp>
+#import <grumble/io/FileHandler.hpp>
 #import <grumble/ui/View.hpp>
 #import <grumble/base/Object.hpp>
 #import <grumble/ui/ScreenHandler.hpp>
@@ -20,21 +22,22 @@
 #import "BoardDataModel.hpp"
 #import "BoardView.hpp"
 
-class Game : public Object {
+class Game : public grumble::Object {
     
 public:
-    Game(const ScreenHandler& screenHandler);
+    Game(const grumble::ScreenHandler& screenHandler, grumble::FileHandler* fileHandler, grumble::SpriteHandler* spriteHandler);
     ~Game();
     
     void update(const float& dt);
     void render();
     
 private:
-    const ScreenHandler &_screenHandler;
-    const SpriteManager _spriteManager;
+    const grumble::ScreenHandler &_screenHandler;
+    const grumble::SpriteManager _spriteManager;
+    const grumble::FileManager _fileManager;
     BlueprintManager _blueprintManager;
     
-    View _mainView;
+    grumble::View _mainView;
     BoardDataModel _boardDataModel;
 };
 

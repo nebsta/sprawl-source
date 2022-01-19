@@ -11,16 +11,19 @@
 
 #include <grumble/base/Object.hpp>
 #include <grumble/util/Logger.hpp>
+#include <grumble/io/FileManager.hpp>
 
 #include "BlueprintDataModel.h"
 
 class BlueprintManager : public grumble::Object {
 public:
-    BlueprintManager();
+    BlueprintManager(const grumble::FileManager& fileManager);
     
     BlueprintDataModel getRandomBlueprint();
     
 private:
+    const grumble::FileManager& _fileManager;
+    
     std::vector<BlueprintDataModel> _allBlueprints;
     
     CellType typeForIndex(int index);
